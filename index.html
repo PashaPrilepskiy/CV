@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Pasha Prilepskiy</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./img/icons/CV.png">
+</head>
+<body>
+<div class="maindiv">
+    <div class="header">
+        <div class="toptext">Pavel Prilepskiy
+            <div class="langbox">
+                <a href="./ua.html"><input class="lbutton" type="button" value="Ua"></a>
+                <a href="./ru.html"><input class="lbutton" type="button" value="Ru"></a>
+                <input class="lbuttonP" type="button" value="Print" onclick='window.print()'>
+                <input id="annotCall" onclick="annotationCall()" class="lbuttonP" type="button" value="?">
+                <img id="annotation" src="img/annotation_en.png" style="display: none" onclick="annotationCallBack()">
+            </div>
+        </div>
+        <img id="ph1" class="photo" src="./img/photo_1.jpg" alt="main-picture" onclick="switchPhoto1_2()" onmouseover="bigPhoto1()" onmouseout="littlePhoto1()">
+
+        <img id="ph2" class="photo" src="./img/photo_2.jpg" alt="main-picture" style = "display: none;" onclick="switchPhoto2_3()" onmouseover="bigPhoto2()" onmouseout="littlePhoto2()">
+        
+        <img id="ph3" class="photo" src="./img/photo_3.jpg" alt="main-picture" style = "display: none;" onclick="switchPhoto3_1()" onmouseover="bigPhoto3()" onmouseout="littlePhoto3()">
+        <div class="toptext">Junior QA / manual tester</div>
+    </div>
+    <div class="cvbody">
+        <div class="leftside">
+            <img class="icon" src="./img/icons/vision.png"><span class="subtitle">My professional vision:</span>
+            <div class="leftblock">
+                Going to develop myself as a true QA professional up to 2023.
+                <br>
+                QA fits best to my type of thinking and principals:
+                <ul>
+                    <li>only the worst cannot be improved;</li>
+                    <li>non progresso est regresso.</li>
+                </ul>
+            </div>
+            <img class="icon" src="./img/icons/education.png"><span class="subtitle">Education:</span>
+            <div class="leftblock">
+                <span class="position">Kiev Slavonic University</span>
+                <br>
+                <span class="dates"><sup>SEP 2004 - JUN 2009</sup></span>
+                <br>
+                International relations, information analytics in international relations.
+            </div>
+            <img class="icon" src="./img/icons/handsshake.png"><span class="subtitle">Working experience:</span>
+            <div class="leftblock">
+                <span class="position">Project manager. <span class="company">Silpo. Fozzy Group</span></span>
+                <br>
+                <span class="dates"><sup>MAY 2018 - OCT 2020</sup></span>
+                <br>
+                Teamwork with McKinsey & Company:
+                <ul>
+                    <li>product owner role in 3 IT projects: soft add-on, mobile app, dashboard;</li>
+                    <li>QA engineer role for this projects;</li>
+                    <li>building a PM team;</li>
+                    <li>cooperating with commercial and marketing departments.</li>
+                </ul>
+                <p>
+                    <span class="position">Store manager. <span class="company">Mango</span></span>
+                    <br>
+                    <span class="dates"><sup>JAN 2018 - FEB 2018</sup></span>
+                    <ul>
+                        <li>financial discipline improvement project.</li>
+                    </ul>
+                </p>
+                <p>
+                    <span class="position">Store manager. <span class="company">LC Waikiki</span></span>
+                    <br>
+                    <span class="dates"><sup>SEP 2015 - JAN 2018</sup></span>
+                    <br>
+                    <ul>
+                        <li>MS Excel developing projects:
+                            <ul>
+                                <li>stores-opening check-list with integrated Gant-diagram;</li>
+                                <li>in-store cash-flow management tool;</li>
+                            </ul>
+                        </li>
+                        <li>projects testing, bug-fix and integration.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <div class="rightside">
+            <img class="icon" src="./img/icons/aboutme.png"><span class="subtitle">About me:</span>     
+            <table class="tableskills" align="right" border="0" width="95%">
+                <colgroup span="2">
+                <col span="1" width="40%">
+                <tr>
+                    <td>Age:</td>
+                    <td><span id="fullage"><span style="color: red;">!!JS is not loaded</span></span></td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td>Kyiv</td>
+                </tr>
+            </table>
+            <br>
+            <img class="icon" src="./img/icons/languages.png"><span class="subtitle">Languages:</span>        
+            <table class="tableskills" align="right" border="0" width="95%">
+                <colgroup span="2">
+                <col span="1" width="40%">
+                <tr>
+                    <td>English</td>
+                    <td><div class="progressEN"></div></td>
+                </tr>
+            </table>
+            <br>            
+            <img class="icon" src="./img/icons/hardskills.png"><span class="subtitle">Hard skills:</span>     
+            <table class="tableskills" align="right" border="0" width="95%">
+                <colgroup span="2">
+                <col span="1" width="40%">
+                <tr>
+                    <td>HTML+CSS</td>
+                    <td><div class="progressHTMLCSS"></div></td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td><div class="progressJS"></div></td>
+                </tr>
+                <tr>
+                    <td>Postman</td>
+                    <td><div class="progressPostman"></div></td>
+                </tr>
+                <tr>
+                    <td>MySQL</td>
+                    <td><div class="progressMySQL"></div></td>
+                </tr>
+                <tr style="display: none;">
+                    <td>MS Office</td>
+                    <td><div class="progressMSOffice"></div></td>
+                </tr>
+                <tr>
+                    <td>Photoshop</td>
+                    <td><div class="progressPhotoshop"></div></td>
+                </tr>
+                <tr>
+                    <td>Jira</td>
+                    <td><div class="progressJira"></div></td>
+                </tr>
+            </table>
+            <br>
+            <img class="icon" src="./img/icons/PM.png"><span class="subtitle">Soft skills:</span>       
+            <table class="tableskills" align="right" border="0" width="95%">
+                <colgroup span="2">
+                <col span="1" width="40%">
+                <tr>
+                    <td>Agile-oriented</td>
+                    <td><div class="progressAgile"></div></td>
+                </tr>
+                <tr>
+                    <td>Scrum</td>
+                    <td><div class="progressScrum"></div></td>
+                </tr>
+                <tr>
+                    <td>Kanban</td>
+                    <td><div class="progressKanban"></div></td>
+                </tr>
+                <tr>
+                    <td>Team player</td>
+                    <td><div class="progressTeamPlayer"></div></td>
+                </tr>
+                <tr>
+                    <td>Learning</td>
+                    <td><div class="progressLearning"></div></td>
+                </tr>
+                <tr>
+                    <td>Time-management</td>
+                    <td><div class="progressTimeM"></div></td>
+                </tr>
+            </table>
+            <br>
+            <img class="icon" src="./img/icons/sertificate.png"><span class="subtitle">Courses:</span>
+            <table class="tableskills" align="right" border="0" width="95%">
+                <tr><td>QA <span class="company">(SkillUp)</span></td></tr>
+                <tr><td>Agile <span class="company">(McKinsey & Company)</span></td></tr>
+                <tr><td>PM <span class="company">(Fozzy Group)</span></td></tr>
+                <tr><td>XYZ theory <span class="company">(Fozzy Group)</span></td></tr>
+                <tr><td>Situational leadership <span class="company">(LC Waikiki)</span></td></tr>
+            </table>
+            <br>
+            <img class="icon" src="./img/icons/hobby.png"><span class="subtitle">Hobbies:</span>
+            <table class="tableskills" align="right" border="0" width="95%">
+                <tr>
+                    <td>
+                        <img class="icon" src="./img/icons/brain.png">
+                        <img class="icon" src="./img/icons/bike.png">
+                        <img class="icon" src="./img/icons/gardening.png">
+                        <img class="icon" src="./img/icons/runningman.png">
+                        <img class="icon" src="./img/icons/food1.png">
+                        <img class="icon" src="./img/icons/games.png">
+                        <img class="icon" src="./img/icons/reading.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        Contact me:
+        <br>
+        <div class="contacts">
+        <form id="mail" action="mailto:prilepskiy.pv@gmail.com" method="post" enctype="text/plain">
+            <label><input class="icon" type="image" src="./img/icons/mail1.png" alt="Send me e-mail" value="Send me e-mail">prilepskiy.pv@gmail.com</label>
+        </form>
+        <a id="phone" href="tel:+380731032576"><img class="icon" src="./img/icons/phonecall.png">+38(073)103-25-76</a>
+        <a id="telegram" title="Telegram" href="tg://resolve?domain=Pasha_Prilepskiy"><img class="icon" src="./img/icons/telegram.png">Pasha_Prilepskiy</a>
+        </div>
+    </div>
+</div>
+<script src="js/cvscript.js"></script>
+</body>
+</html>
