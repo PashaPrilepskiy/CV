@@ -56,6 +56,13 @@ body {
         left: 1px;
         visibility: hidden;
     }
+    .testDocDiv {
+        visibility: hidden;
+        height: 0px;
+    }
+    #softSTable {
+        margin-bottom: 0px;
+    }
 }
 @media screen and (max-width: 799px) {
     body {
@@ -228,6 +235,16 @@ ul {
     margin-bottom: 15px;
     border-collapse: collapse;
 }
+.testDocDiv {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+#sampleButton {
+    position: relative;
+    top: 3.5px;
+}
 .footer {
     margin-bottom: 0px;
     border-style: solid;
@@ -318,4 +335,11 @@ ul {
 }
 .progressTimeM::before {
     width: 90%;
+}
+/*This part refered to the samples page*/
+.sample {
+    width: 100%;
+}
+.sampleDiv {
+    padding-top: 15px;
 }
