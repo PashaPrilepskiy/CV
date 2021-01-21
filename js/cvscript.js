@@ -1,4 +1,3 @@
-
 // Age counter
 var myBirthday = new Date(1987, 2, 5);
 var msecBD = Date.parse(myBirthday);
@@ -128,4 +127,15 @@ function annotationCall() {
 function annotationCallBack() {
     document.getElementById("annotation").style.display = "none";
 }
+// Call the samples window
+function samplesWindowCall() {
+    var w = window.innerWidth / 1.3;
+    var h = window.innerHeight / 1.4;
+
+    samplesWindow = window.open("samples.html", "_blank", "width=200, height=150");
+    samplesWindow.moveTo(30, 70);
+    samplesWindow.resizeTo(w,h);
+    samplesWindow.focus();
+}
+
 
