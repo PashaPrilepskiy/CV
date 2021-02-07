@@ -40,7 +40,7 @@
                     await driver.switchTo().window(handle);
                 }
             });
-            /* testing: links of the <UL> lead to correct samples*/
+            /* testing: links of the list lead to correct samples*/
             await driver.findElement(By.linkText('Test report')).click();
             await pause(1800);
             await driver.findElement(By.linkText('Test plan')).click();
