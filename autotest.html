@@ -14,125 +14,129 @@
         (Written for Firefox browser;
         language: JavaScript):</strong><pre></pre></span>
     <code>
-            <pre>
-    const { assert } = require("console");
-    const {Builder, By} = require("selenium-webdriver");
-
-    async function myFunction() {
-        let driver = await new Builder().forBrowser('firefox').build();
-        const originalWindow = await driver.getWindowHandle();
-        assert((await driver.getAllWindowHandles()).length === 1);
-        // loading my web-CV homepage
-        await driver.get('https://pashaprilepskiy.github.io/cv/');
-        await pause(1800);
-        // testing: page with samples is loaded by clicking a button "View test documentation samples"
-        await driver.findElement(By.id('sampleButton')).click();
-        await pause(1800);
-        // code that takes control on new window and makes available returning to main window
-        await driver.wait(
-            async () => (await driver.getAllWindowHandles()).length === 2,
-            1800);
-            var windows = await driver.getAllWindowHandles();
-            windows.forEach(async handle => {
-            if (handle !== originalWindow) {
-            await driver.switchTo().window(handle);
-        }
-        });
-        // testing: links of the list lead to correct samples
-        await driver.findElement(By.linkText('Test report')).click();
-        await pause(1800);
-        await driver.findElement(By.linkText('Test plan')).click();
-        await pause(1800);
-        await driver.findElement(By.linkText('Bug report')).click();
-        await pause(1800);
-        await driver.findElement(By.linkText('Test suite')).click();
-        await pause(1800);
-        // closing samples page and returning to main window
-        await driver.close();
-        await driver.switchTo().window(originalWindow);
-        await pause(1800);
-        // testing language change: EN => UA
-        await driver.findElement(By.id('lUa')).click();
-        await pause(1800);
-        // testing annotation: language is UA
-        await driver.findElement(By.id('annotCall')).click();
-        await pause(1800);    
-        await driver.findElement(By.id('annotation')).click();
-        await pause(1800);
-        // testing language change: UA => RU
-        await driver.findElement(By.id('lRu')).click();
-        await pause(1800);
-        // testing annotation: language is RU
-        await driver.findElement(By.id('annotCall')).click();
-        await pause(1800);    
-        await driver.findElement(By.id('annotation')).click();
-        await pause(1800);
-        // testing language change: RU => EN
-        await driver.findElement(By.id('lEn')).click();
-        await pause(1800);
-        // testing annotation: language is EN
-        await driver.findElement(By.id('annotCall')).click();
-        await pause(1800);    
-        await driver.findElement(By.id('annotation')).click();
-        await pause(1800);
-        // testing language change: EN => RU
-        await driver.findElement(By.id('lRu')).click();
-        await pause(1800);
-        // testing language change: RU => UA
-        await driver.findElement(By.id('lUa')).click();
-        await pause(1800);
-        // testing language change: UA => EN
-        await driver.findElement(By.id('lEn')).click();
-        await pause(1800);
-        // testing: main photo size is encreasing by onnouseon and decreasing back by onmouseout
-        let away = driver.findElement(By.css('.icon'));
-        let ph1 = driver.findElement(By.id('ph1'));
-        const actions = driver.actions({async: true});
-
-        await actions.move({origin:ph1}).perform();
-        await pause(2000);
-        await actions.move({origin:away});
-        actions.move({origin:away}).press().perform();
-        actions.move({origin:away}).release().perform();
-        await pause(3000);
-        // testing: main fhoto can bi changed by click
-        await driver.findElement(By.id('ph1')).click();
-        await pause(1800);
-        await driver.findElement(By.id('ph2')).click();
-        await pause(1800);
-        await driver.findElement(By.id('ph3')).click();
-        await pause(1800);
+        <pre>
+        const { assert } = require("console");
+        const {Builder, By} = require("selenium-webdriver");
         
-
-        // testing: page with samples is loaded by clicking a button "View auto-test code example"
-        await driver.findElement(By.id('autoTestButton')).click();
-        await pause(1800);
-        await driver.wait(
-            async () => (await driver.getAllWindowHandles()).length === 2,
-            1800);
-            var windows = await driver.getAllWindowHandles();
-            windows.forEach(async handle => {
-            if (handle !== originalWindow) {
-            await driver.switchTo().window(handle);
-        }
-        });
-        await driver.findElement(By.css('.maindiv'));
-        await pause(2400);
+        async function myFunction() {
+            let driver = await new Builder().forBrowser('firefox').build();
+            const originalWindow = await driver.getWindowHandle();
+            assert((await driver.getAllWindowHandles()).length === 1);
+            /* loading my web-CV homepage*/
+            await driver.get('https://pashaprilepskiy.github.io/cv/');
+            await pause(1800);
+            /* testing: page with samples is loaded by clicking a 
+            button "View test documentation samples"*/
+            await driver.findElement(By.id('sampleButton')).click();
+            await pause(1800);
+            /* code that takes control on new window and makes 
+            available returning to main window*/
+            await driver.wait(
+                async () => (await driver.getAllWindowHandles()).length === 2,
+                1800);
+                var windows = await driver.getAllWindowHandles();
+                windows.forEach(async handle => {
+                if (handle !== originalWindow) {
+                    await driver.switchTo().window(handle);
+                }
+            });
+            /* testing: links of the <UL> lead to correct samples*/
+            await driver.findElement(By.linkText('Test report')).click();
+            await pause(1800);
+            await driver.findElement(By.linkText('Test plan')).click();
+            await pause(1800);
+            await driver.findElement(By.linkText('Bug report')).click();
+            await pause(1800);
+            await driver.findElement(By.linkText('Test suite')).click();
+            await pause(1800);
+            /* closing samples page and returning to main window*/
+            await driver.close();
+            await driver.switchTo().window(originalWindow);
+            await pause(1800);
+            /* testing language change: EN => UA*/
+            await driver.findElement(By.id('lUa')).click();
+            await pause(1800);
+            /* testing annotation: language is UA*/
+            await driver.findElement(By.id('annotCall')).click();
+            await pause(1800);    
+            await driver.findElement(By.id('annotation')).click();
+            await pause(1800);
+            /* testing language change: UA => RU*/
+            await driver.findElement(By.id('lRu')).click();
+            await pause(1800);
+            /* testing annotation: language is RU*/
+            await driver.findElement(By.id('annotCall')).click();
+            await pause(1800);    
+            await driver.findElement(By.id('annotation')).click();
+            await pause(1800);
+            /* testing language change: RU => EN*/
+            await driver.findElement(By.id('lEn')).click();
+            await pause(1800);
+            /* testing annotation: language is EN*/
+            await driver.findElement(By.id('annotCall')).click();
+            await pause(1800);    
+            await driver.findElement(By.id('annotation')).click();
+            await pause(1800);
+            /* testing language change: EN => RU*/
+            await driver.findElement(By.id('lRu')).click();
+            await pause(1800);
+            /* testing language change: RU => UA*/
+            await driver.findElement(By.id('lUa')).click();
+            await pause(1800);
+            /* testing language change: UA => EN*/
+            await driver.findElement(By.id('lEn')).click();
+            await pause(1800);
+            /* testing: main photo size is encreasing by onnouseon 
+            and decreasing back by onmouseout*/
+            let away = driver.findElement(By.css('.icon'));
+            let ph1 = driver.findElement(By.id('ph1'));
+            const actions = driver.actions({async: true});
         
-        await driver.close();
-        await driver.switchTo().window(originalWindow);
-        await pause(2100);
-        // ends the test and closes broeser
-        await driver.quit();
-    };
-    // allows to use simple timeouts between tests
-    function pause(ms) {
-        return new Promise(resolve => {
-        setTimeout(resolve, ms);
-        })
-    };
-    // function runner
-    myFunction();
+            await actions.move({origin:ph1}).perform();
+            await pause(2000);
+            await actions.move({origin:away});
+            actions.move({origin:away}).press().perform();
+            actions.move({origin:away}).release().perform();
+            await pause(3000);
+            /* testing: main fhoto can bi changed by click*/
+            await driver.findElement(By.id('ph1')).click();
+            await pause(1800);
+            await driver.findElement(By.id('ph2')).click();
+            await pause(1800);
+            await driver.findElement(By.id('ph3')).click();
+            await pause(1800);
+            
+        
+            /* testing: page with samples is loaded by clicking a 
+            button "View auto-test code example"*/
+            await driver.findElement(By.id('autoTestButton')).click();
+            await pause(1800);
+            await driver.wait(
+                async () => (await driver.getAllWindowHandles()).length === 2,
+                1800);
+                var windows = await driver.getAllWindowHandles();
+                windows.forEach(async handle => {
+                if (handle !== originalWindow) {
+                await driver.switchTo().window(handle);
+                }
+            });
+            await driver.findElement(By.css('.maindiv'));
+            await pause(2400);
+            
+            await driver.close();
+            await driver.switchTo().window(originalWindow);
+            await pause(2100);
+            /* ends the test and closes broeser*/
+            await driver.quit();
+        };
+        /* allows to use simple timeouts between tests*/
+        function pause(ms) {
+            return new Promise(resolve => {
+                setTimeout(resolve, ms);
+            })
+        };
+        /* function runner*/
+        myFunction();
         </pre>
     </code>    
 </div>
