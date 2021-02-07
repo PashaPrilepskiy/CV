@@ -12,8 +12,8 @@
     <div class="header">
         <div class="toptext">Pavel Prilepskiy
             <div class="langbox">
-                <a href="./ua.html"><input id="lUa" class="lbutton" type="button" value="Ua"></a>
-                <a href="./ru.html"><input id="lRu" class="lbutton" type="button" value="Ru"></a>
+                <a href="./ua.html"><input class="lbutton" type="button" value="Ua"></a>
+                <a href="./ru.html"><input class="lbutton" type="button" value="Ru"></a>
                 <input class="lbuttonP" type="button" value="Print" onclick='window.print()'>
                 <input id="annotCall" onclick="annotationCall()" class="lbuttonP" type="button" value="?">
                 <img id="annotation" src="img/annotation_en.png" style="display: none" onclick="annotationCallBack()">
@@ -24,16 +24,19 @@
         <img id="ph2" class="photo" src="./img/photo_2.jpg" alt="main-picture" style = "display: none;" onclick="switchPhoto2_3()" onmouseover="bigPhoto2()" onmouseout="littlePhoto2()">
         
         <img id="ph3" class="photo" src="./img/photo_3.jpg" alt="main-picture" style = "display: none;" onclick="switchPhoto3_1()" onmouseover="bigPhoto3()" onmouseout="littlePhoto3()">
-        <div class="toptext">QA engineer</div>
+        <div class="toptext">Junior QA / manual tester</div>
     </div>
     <div class="cvbody">
         <div class="leftside">
-            <img class="icon" src="./img/icons/vision.png"><span class="subtitle">Summary:</span>
+            <img class="icon" src="./img/icons/vision.png"><span class="subtitle">My professional vision:</span>
             <div class="leftblock">
-                Continuous learner.
-                <br>Experienced in manual testing, test documentation, front-end developing, project management.
-                <br>Learning JavaScript and auto-testing.
-                <br>Planning to develop in auto-testing and to learn Python, Java.
+                Going to develop myself as a true QA professional up to 2023.
+                <br>
+                QA fits best to my type of thinking and principals:
+                <ul>
+                    <li>only the worst cannot be improved;</li>
+                    <li>non progresso est regresso.</li>
+                </ul>
             </div>
             <img class="icon" src="./img/icons/education.png"><span class="subtitle">Education:</span>
             <div class="leftblock">
@@ -45,10 +48,6 @@
             </div>
             <img class="icon" src="./img/icons/handsshake.png"><span class="subtitle">Working experience:</span>
             <div class="leftblock">
-                <span class="position">QC engineer. <span class="company">Infopulse</span></span>
-                <br>
-                <span class="dates"><sup>FEB 2021 - present time</sup></span>
-                <p>
                 <span class="position">Project manager. <span class="company">Silpo. Fozzy Group</span></span>
                 <br>
                 <span class="dates"><sup>MAY 2018 - OCT 2020</sup></span>
@@ -60,6 +59,14 @@
                     <li>building a PM team;</li>
                     <li>cooperating with commercial and marketing departments.</li>
                 </ul>
+                <p>
+                    <span class="position">Store manager. <span class="company">Mango</span></span>
+                    <br>
+                    <span class="dates"><sup>JAN 2018 - FEB 2018</sup></span>
+                    <ul>
+                        <li>financial discipline improvement project.</li>
+                    </ul>
+                </p>
                 <p>
                     <span class="position">Store manager. <span class="company">LC Waikiki</span></span>
                     <br>
@@ -78,13 +85,19 @@
             </div>
         </div>
         <div class="rightside">
-            <form id="mail" action="mailto:prilepskiy.pv@gmail.com" method="post" enctype="text/plain">
-                <label><input class="icon" type="image" src="./img/icons/mail1.png" alt="Send me e-mail" value="Send me e-mail">prilepskiy.pv@gmail.com</label>
-            </form>
-            <a id="phone" href="tel:+380731032576"><img class="icon" src="./img/icons/phonecall.png">+38(073)103-25-76</a>
-            <br>
-            <a id="telegram" title="Telegram" href="tg://resolve?domain=Pasha_Prilepskiy"><img class="icon" src="./img/icons/telegram.png">Pasha_Prilepskiy</a>
-            <br>
+            <img class="icon" src="./img/icons/aboutme.png"><span class="subtitle">About me:</span>     
+            <table class="tableskills" align="right" border="0" width="95%">
+                <colgroup span="2">
+                <col span="1" width="40%">
+                <tr>
+                    <td>Age:</td>
+                    <td><span id="fullage"><span style="color: red;">!!JS is not loaded</span></span></td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td>Kyiv</td>
+                </tr>
+            </table>
             <br>
             <img class="icon" src="./img/icons/languages.png"><span class="subtitle">Languages:</span>        
             <table class="tableskills" align="right" border="0" width="95%">
@@ -121,20 +134,12 @@
                     <td><div class="progressMSOffice"></div></td>
                 </tr>
                 <tr>
-                    <td>Selenium</td>
-                    <td><div class="progressSelenium"></div></td>
+                    <td>Photoshop</td>
+                    <td><div class="progressPhotoshop"></div></td>
                 </tr>
                 <tr>
                     <td>Jira</td>
                     <td><div class="progressJira"></div></td>
-                </tr>
-                <tr>
-                    <td>Scrum</td>
-                    <td><div class="progressScrum"></div></td>
-                </tr>
-                <tr>
-                    <td>Kanban</td>
-                    <td><div class="progressKanban"></div></td>
                 </tr>
             </table>
             <br>
@@ -145,6 +150,14 @@
                 <tr>
                     <td>Agile-oriented</td>
                     <td><div class="progressAgile"></div></td>
+                </tr>
+                <tr>
+                    <td>Scrum</td>
+                    <td><div class="progressScrum"></div></td>
+                </tr>
+                <tr>
+                    <td>Kanban</td>
+                    <td><div class="progressKanban"></div></td>
                 </tr>
                 <tr>
                     <td>Team player</td>
@@ -160,8 +173,6 @@
                 </tr>
             </table>
             <div class="testDocDiv"><img class="icon" src="./img/icons/testDocumentation.png"><button id="sampleButton" type="button" style="margin-left: 2%;" onclick="samplesWindowCall()">View test documentation samples</button>
-            </div>
-            <div class="testCodeDiv"><img class="icon" src="./img/icons/PC.png"><button id="autoTestButton" type="button" style="margin-left: 2%;" onclick="TestCodeWindowCall()">View auto-test code example</button>
             </div>
             <img class="icon" src="./img/icons/sertificate.png"><span class="subtitle">Courses:</span>
             <table class="tableskills" align="right" border="0" width="95%">
@@ -189,9 +200,15 @@
         </div>
     </div>
     <div class="footer">
-        <p>
-        <hr width="40%" align="left">
-        Please visit my web-CV: https://pashaprilepskiy.github.io/cv/
+        Contact me:
+        <br>
+        <div class="contacts">
+        <form id="mail" action="mailto:prilepskiy.pv@gmail.com" method="post" enctype="text/plain">
+            <label><input class="icon" type="image" src="./img/icons/mail1.png" alt="Send me e-mail" value="Send me e-mail">prilepskiy.pv@gmail.com</label>
+        </form>
+        <a id="phone" href="tel:+380731032576"><img class="icon" src="./img/icons/phonecall.png">+38(073)103-25-76</a>
+        <a id="telegram" title="Telegram" href="tg://resolve?domain=Pasha_Prilepskiy"><img class="icon" src="./img/icons/telegram.png">Pasha_Prilepskiy</a>
+        </div>
     </div>
 </div>
 <script src="js/cvscript.js"></script>
