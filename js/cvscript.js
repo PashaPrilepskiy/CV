@@ -1,14 +1,14 @@
 
-// Age counter
-var myBirthday = new Date(1987, 2, 5);
-var msecBD = Date.parse(myBirthday);
-var currentDate = new Date();
-var msecCD = Date.parse(currentDate)
-var msecDiff = msecCD - msecBD
-var countDate = new Date(msecDiff)
-var zeroDate = new Date(0)
-var myAge = countDate.getFullYear() - zeroDate.getFullYear()
-document.getElementById('fullage').innerHTML = myAge;
+// // Age counter
+// var myBirthday = new Date(1987, 2, 5);
+// var msecBD = Date.parse(myBirthday);
+// var currentDate = new Date();
+// var msecCD = Date.parse(currentDate)
+// var msecDiff = msecCD - msecBD
+// var countDate = new Date(msecDiff)
+// var zeroDate = new Date(0)
+// var myAge = countDate.getFullYear() - zeroDate.getFullYear()
+// document.getElementById('fullage').innerHTML = myAge;
 // Changing photos
 function switchPhoto1_2 () {
     document.getElementById("ph1").style.display = 'none',
