@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./img/icons/CV.png">
 </head>
-<body style="font-size: 12.5pt;">
+<body>
 <div class="maindiv">
     <div class="header">
         <div class="toptext">Павел Прилепский
             <div class="langbox">
-                <a href="./ua.html"><input class="lbutton" type="button" value="Ua"></a>
-                <a href="./index.html"><input class="lbutton" type="button" value="En"></a>
+                <a href="./ua.html"><input id="lUa" class="lbutton" type="button" value="Ua"></a>
+                <a href="./index.html"><input id="lEn" class="lbutton" type="button" value="En"></a>
                 <input class="lbuttonP" type="button" value="Печать" onclick='window.print()'>
                 <input id="annotCall" onclick="annotationCall()" class="lbuttonP" type="button" value="?">
                 <img id="annotation" src="img/annotation_ru.png" style="display: none" onclick="annotationCallBack()">
@@ -24,20 +24,16 @@
         <img id="ph2" class="photo" src="./img/photo_2.jpg" alt="main-picture" style = "display: none;" onclick="switchPhoto2_3()" onmouseover="bigPhoto2()" onmouseout="littlePhoto2()">
         
         <img id="ph3" class="photo" src="./img/photo_3.jpg" alt="main-picture" style = "display: none;" onclick="switchPhoto3_1()" onmouseover="bigPhoto3()" onmouseout="littlePhoto3()">
-        <div class="toptext">Junior QA / manual tester</div>
+        <div class="toptext">QA engineer</div>
     </div>
 
     <div class="cvbody">
         <div class="leftside">
-            <img class="icon" src="./img/icons/vision.png"><span class="subtitle">Профессиональное виденье:</span>
+            <img class="icon" src="./img/icons/vision.png"><span class="subtitle">Резюме:</span>
             <div class="leftblock">
-                Стану настоящим QA профессионалом к 2023.
-                <br>
-                QA подходит моему стилю мышления и принципам:
-                <ul>
-                    <li>только худшее нельзя сделать лучше;</li>
-                    <li>non progresso est regresso.</li>
-                </ul>
+                Имею опыт в ручном тестировании, составлении тестовой документации, front-end разработке, проектном менеджменте.
+                <br>Изучаю JavaScript и авто-тестирование.
+                <br>Планирую развиваться в автоматизации тестирования, а так же освоить Python, Java.
             </div>
             <img class="icon" src="./img/icons/education.png"><span class="subtitle">Образование:</span>
             <div class="leftblock">
@@ -49,6 +45,10 @@
             </div>
             <img class="icon" src="./img/icons/handsshake.png"><span class="subtitle">Опыт работы:</span>
             <div class="leftblock">
+                <span class="position">QC engineer. <span class="company">Infopulse</span></span>
+                <br>
+                <span class="dates"><sup>FEB 2021 - present time</sup></span>
+                <p>
                 <span class="position">Менеджер проектов. <span class="company">Сильпо. Fozzy Group</span></span>
                 <br>
                 <span class="dates"><sup>MAY 2018 - OCT 2020</sup></span>
@@ -60,14 +60,6 @@
                     <li>построение проектной команды;</li>
                     <li>коммуникация с коммерческим и маркетинговым офисами.</li>
                 </ul>
-                <p>
-                    <span class="position">Управляющий магазином. <span class="company">Mango</span></span>
-                    <br>
-                    <span class="dates"><sup>JAN 2018 - FEB 2018</sup></span>
-                    <ul>
-                        <li>проект улучшения финансовой дисциплины.</li>
-                    </ul>
-                </p>
                 <p>
                     <span class="position">Управляющий магазином. <span class="company">LC Waikiki</span></span>
                     <br>
@@ -86,19 +78,13 @@
             </div>
         </div>
         <div class="rightside">
-            <img class="icon" src="./img/icons/aboutme.png"><span class="subtitle">Обо мне:</span>     
-            <table class="tableskills" align="right" border="0" width="95%">
-                <colgroup span="2">
-                <col span="1" width="40%">
-                <tr>
-                    <td>Возраст:</td>
-                    <td><span id="fullage"><span style="color: red;">!!JS is not loaded</span></span></td>
-                </tr>
-                <tr>
-                    <td>Город:</td>
-                    <td>Киев</td>
-                </tr>
-            </table>
+            <form id="mail" action="mailto:prilepskiy.pv@gmail.com" method="post" enctype="text/plain">
+                <label><input class="icon" type="image" src="./img/icons/mail1.png" alt="Send me e-mail" value="Send me e-mail">prilepskiy.pv@gmail.com</label>
+            </form>
+            <a id="phone" href="tel:+380731032576"><img class="icon" src="./img/icons/phonecall.png">+38(073)103-25-76</a>
+            <br>
+            <a id="telegram" title="Telegram" href="tg://resolve?domain=Pasha_Prilepskiy"><img class="icon" src="./img/icons/telegram.png">Pasha_Prilepskiy</a>
+            <br>
             <br>
             <img class="icon" src="./img/icons/languages.png"><span class="subtitle">Владение языком:</span>        
             <table class="tableskills" align="right" border="0" width="95%">
@@ -142,6 +128,14 @@
                     <td>Jira</td>
                     <td><div class="progressJira"></div></td>
                 </tr>
+                <tr>
+                    <td>Scrum</td>
+                    <td><div class="progressScrum"></div></td>
+                </tr>
+                <tr>
+                    <td>Kanban</td>
+                    <td><div class="progressKanban"></div></td>
+                </tr>
             </table>
             <br>
             <img class="icon" src="./img/icons/PM.png"><span class="subtitle">Гибкие навыки:</span>       
@@ -151,14 +145,6 @@
                 <tr>
                     <td>Agile-ориентирован</td>
                     <td><div class="progressAgile"></div></td>
-                </tr>
-                <tr>
-                    <td>Scrum</td>
-                    <td><div class="progressScrum"></div></td>
-                </tr>
-                <tr>
-                    <td>Kanban</td>
-                    <td><div class="progressKanban"></div></td>
                 </tr>
                 <tr>
                     <td>Работа в команде</td>
@@ -174,6 +160,8 @@
                 </tr>
             </table>
             <div class="testDocDiv"><img class="icon" src="./img/icons/testDocumentation.png"><button id="sampleButton" type="button" style="margin-left: 2%;" onclick="samplesWindowCall()">Посмотреть образцы тестовой документации</button>
+            </div>
+            <div class="testCodeDiv"><img class="icon" src="./img/icons/PC.png"><button id="autoTestButton" type="button" style="margin-left: 2%;" onclick="TestCodeWindowCall()">Посмотреть образец кода автотеста</button>
             </div>
             <img class="icon" src="./img/icons/sertificate.png"><span class="subtitle">Курсы:</span>
             <table class="tableskills" align="right" border="0" width="95%">
@@ -202,17 +190,9 @@
     </div>
 
     <div class="footer">
-        Свяжитесь со мной:
-        <br>
-        <div class="contacts">
-        <form id="mail" action="mailto:prilepskiy.pv@gmail.com" method="post" enctype="text/plain">
-            <label><input class="icon" type="image" src="./img/icons/mail1.png" alt="Send me e-mail" value="Send me e-mail">prilepskiy.pv@gmail.com</label>
-        </form>
-        <a id="phone" href="tel:+380731032576"><img class="icon" src="./img/icons/phonecall.png">+38(073)103-25-76</a>
-        <a id="telegram" title="Telegram" href="tg://resolve?domain=Pasha_Prilepskiy"><img class="icon" src="./img/icons/telegram.png">Pasha_Prilepskiy</a>
-        </div>
+            <hr width="40%" align="left">
+            Please visit my web-CV: https://pashaprilepskiy.github.io/cv/
     </div>
-
 </div>
 <script src="js/cvscript.js"></script>
 </body>

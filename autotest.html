@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Pasha Prilepskiy</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./img/icons/CV.png">
+</head>
+<body>
+<div class="maindiv">
+    <div><span><pre><strong>
+    Autotest code for my CV options
+        (Written for Firefox browser;
+        language: JavaScript):</strong><pre></pre></span>
+        <code><pre>
+    const { assert } = require("console");
+    const {Builder, Capabilities, By} = require("selenium-webdriver");
+    const caps = new Capabilities(); 
+
+    async function myFunction() {
+        let driver = await new Builder().forBrowser('firefox').build();
+        const originalWindow = await driver.getWindowHandle();
+        assert((await driver.getAllWindowHandles()).length === 1);
+
+        await driver.get('https://pashaprilepskiy.github.io/cv/');
+        
+        await pause(1800);
+        await driver.findElement(By.id('sampleButton')).click();
+
+        await driver.wait(
+            async () => (await driver.getAllWindowHandles()).length === 2,
+            1800);
+            const windows = await driver.getAllWindowHandles();
+            windows.forEach(async handle => {
+            if (handle !== originalWindow) {
+            await driver.switchTo().window(handle);
+        }
+        });
+
+        await pause(1800);
+        await driver.findElement(By.linkText('Test report')).click();
+        await pause(1800);
+        await driver.findElement(By.linkText('Test plan')).click();
+        await pause(1800);
+        await driver.findElement(By.linkText('Bug report')).click();
+        await pause(1800);
+        await driver.findElement(By.linkText('Test suite')).click();
+        await pause(1800);
+        await driver.close();
+        await driver.switchTo().window(originalWindow);
+        await pause(1800);
+        await driver.findElement(By.css('.lbutton')).click();
+        await pause(1800);
+        await driver.findElement(By.id('annotCall')).click();
+        await pause(1800);    
+        await driver.findElement(By.id('annotation')).click();
+        await pause(1800);
+        await driver.findElement(By.css('.lbutton')).click();
+        await pause(1800);
+        await driver.findElement(By.id('annotCall')).click();
+        await pause(1800);    
+        await driver.findElement(By.id('annotation')).click();
+        await pause(1800);
+
+        let away = driver.findElement(By.css('.icon'));
+        let ph1 = driver.findElement(By.id('ph1'));
+        const actions = driver.actions({async: true});
+
+        await actions.move({origin:ph1}).perform()
+        await pause(1800);
+        await actions.move({origin:away});
+        actions.move({origin:away}).press().perform();
+        actions.move({origin:away}).release().perform();
+        await pause(1800);
+
+        await driver.findElement(By.id('ph1')).click();
+        await pause(1800);
+        await driver.findElement(By.id('ph2')).click();
+        await pause(1800);
+        await driver.findElement(By.id('ph3')).click();
+        await pause(1800);
+
+        await driver.quit();
+    };
+    function pause(ms) {
+        return new Promise(resolve => {
+        setTimeout(resolve, ms);
+        })
+    };
+    myFunction();
+    </pre>
+    </code>    
+</div>
+<script src="js/cvscript.js"></script>
+</body>
+</html>
