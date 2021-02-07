@@ -3,7 +3,7 @@ body {
     padding-right: 1%;
     background-color: #F4FAFA;
     font-family: 'Arimo', sans-serif;
-    font-size: 13pt;
+    font-size: 12.5pt;
 }
 .subtitle {
     font-weight: 700;
@@ -37,14 +37,14 @@ body {
         margin-bottom: -2px;
         margin-right: 3px;
     }
-    .progressEN, .progressHTMLCSS, .progressJS, .progressPostman, .progressMySQL, .progressMSOffice, .progressJira, .progressPhotoshop, .progressAgile, .progressScrum, .progressKanban, .progressTeamPlayer, .progressLearning, .progressTimeM {
+    .progressEN, .progressHTMLCSS, .progressJS, .progressPostman, .progressMySQL, .progressMSOffice, .progressJira, .progressSelenium, .progressAgile, .progressScrum, .progressKanban, .progressTeamPlayer, .progressLearning, .progressTimeM {
         height: 7px;
         margin-bottom: -5px;
     }
     .rightside, .leftside {
         padding: 10px;
     }
-    .progressEN::before, .progressHTMLCSS::before, .progressJS::before, .progressPostman::before, .progressMySQL::before, .progressMSOffice::before, .progressJira::before, .progressPhotoshop::before, .progressAgile::before, .progressScrum::before, .progressKanban::before, .progressTeamPlayer::before, .progressLearning::before, .progressTimeM::before {
+    .progressEN::before, .progressHTMLCSS::before, .progressJS::before, .progressPostman::before, .progressMySQL::before, .progressMSOffice::before, .progressJira::before, .progressSelenium::before, .progressAgile::before, .progressScrum::before, .progressKanban::before, .progressTeamPlayer::before, .progressLearning::before, .progressTimeM::before {
         border: 7px solid #008DF2; /* Рамка */
     }
     .photo {
@@ -56,7 +56,7 @@ body {
         left: 1px;
         visibility: hidden;
     }
-    .testDocDiv {
+    .testDocDiv, .testCodeDiv {
         visibility: hidden;
         height: 0px;
     }
@@ -78,7 +78,7 @@ body {
     .maindiv {
         font-size: 8px;
     }
-    .progressEN, .progressHTMLCSS, .progressJS, .progressPostman, .progressMySQL, .progressMSOffice, .progressJira, .progressPhotoshop, .progressAgile, .progressScrum, .progressKanban, .progressTeamPlayer, .progressLearning, .progressTimeM {
+    .progressEN, .progressHTMLCSS, .progressJS, .progressPostman, .progressMySQL, .progressMSOffice, .progressJira, .progressSelenium, .progressAgile, .progressScrum, .progressKanban, .progressTeamPlayer, .progressLearning, .progressTimeM {
         height: 5px;
         margin-bottom: -3px;
     }
@@ -110,7 +110,7 @@ body {
     margin-bottom: -5px;
     margin-right: 5px;
     }
-    .progressEN, .progressHTMLCSS, .progressJS, .progressPostman, .progressMySQL, .progressMSOffice, .progressJira, .progressPhotoshop, .progressAgile, .progressScrum, .progressKanban, .progressTeamPlayer, .progressLearning, .progressTimeM {
+    .progressEN, .progressHTMLCSS, .progressJS, .progressPostman, .progressMySQL, .progressMSOffice, .progressJira, .progressSelenium, .progressAgile, .progressScrum, .progressKanban, .progressTeamPlayer, .progressLearning, .progressTimeM {
         height: 11px;
         margin-bottom: -5px;
     }
@@ -138,13 +138,16 @@ body {
         max-width: 1280px;
         margin: 0 auto;
     }
-    .progressEN::before, .progressHTMLCSS::before, .progressJS::before, .progressPostman::before, .progressMySQL::before, .progressMSOffice::before, .progressJira::before, .progressPhotoshop::before, .progressAgile::before, .progressScrum::before, .progressKanban::before, .progressTeamPlayer::before, .progressLearning::before, .progressTimeM::before {
+    .progressEN::before, .progressHTMLCSS::before, .progressJS::before, .progressPostman::before, .progressMySQL::before, .progressMSOffice::before, .progressJira::before, .progressSelenium::before, .progressAgile::before, .progressScrum::before, .progressKanban::before, .progressTeamPlayer::before, .progressLearning::before, .progressTimeM::before {
         border: 1px solid #008DF2; /* Рамка */
     }
     .langbox {
         position: absolute;
         top: 2px;
         left: 2px;
+    }
+    .footer {
+        visibility: hidden;
     }
 }
 .header {
@@ -196,7 +199,7 @@ body {
     border-style: solid;
     border-color: rgb(7, 127, 207);
     border-width: 0px;
-    width: 65%;
+    width: 60%;
     margin-right: 0.1%;
     padding: 5px;
     margin-top: -2%;
@@ -227,7 +230,7 @@ ul {
     border-style: solid;
     border-color: rgb(35, 189, 43);
     border-width: 0px;
-    width: 35%;
+    width: 40%;
     padding: 5px;
     margin-top: -2%;
 }
@@ -235,7 +238,7 @@ ul {
     margin-bottom: 15px;
     border-collapse: collapse;
 }
-.testDocDiv {
+.testDocDiv, .testCodeDiv {
     margin-bottom: 15px;
     width: 100%;
     display: flex;
@@ -243,7 +246,13 @@ ul {
 }
 #sampleButton {
     position: relative;
-    top: 3.5px;
+    font-size: 100%;
+    width: 80%;
+}
+#autoTestButton {
+    position: relative;
+    font-size: 100%;
+    width: 80%;
 }
 .footer {
     margin-bottom: 0px;
@@ -253,6 +262,7 @@ ul {
     display: flex;
     flex-direction: column;
     margin-top: -1%;
+    padding-left: 1rem;
 }
 .contacts {
     display: flex;
@@ -260,20 +270,14 @@ ul {
     padding: 5px;
 }
 #mail {
-    margin-left: 2%;
-}
-#phone {
-    margin-left: 3%;
-}
-#telegram {
-    margin-left: 3%;
-}
+    margin-bottom: 0.1rem;
+} 
 #web {
     margin-left: 3%;
 }
 
 /*в печать идет не комильфо. поискать альтернативный вариант шкалы*/
-.progressEN, .progressHTMLCSS, .progressJS, .progressPostman, .progressMySQL, .progressMSOffice, .progressJira, .progressPhotoshop, .progressAgile, .progressScrum, .progressKanban, .progressTeamPlayer, .progressLearning, .progressTimeM {
+.progressEN, .progressHTMLCSS, .progressJS, .progressPostman, .progressMySQL, .progressMSOffice, .progressJira, .progressSelenium, .progressAgile, .progressScrum, .progressKanban, .progressTeamPlayer, .progressLearning, .progressTimeM {
     background: -moz-linear-gradient(top, #333, #999); /* Fx 3.6+ */
     background: -webkit-linear-gradient(top, #333, #999); /* Chrome 10+,Safari 5.1+ */
     background: -o-linear-gradient(top, #333,#999); /* Opera 11.10+ */
@@ -284,7 +288,7 @@ ul {
     overflow: hidden;
     margin-top: 0px;
 }
-.progressEN::before, .progressHTMLCSS::before, .progressJS::before, .progressPostman::before, .progressMySQL::before, .progressMSOffice::before, .progressJira::before, .progressPhotoshop::before, .progressAgile::before, .progressScrum::before, .progressKanban::before, .progressTeamPlayer::before, .progressLearning::before, .progressTimeM::before {
+.progressEN::before, .progressHTMLCSS::before, .progressJS::before, .progressPostman::before, .progressMySQL::before, .progressMSOffice::before, .progressJira::before, .progressSelenium::before, .progressAgile::before, .progressScrum::before, .progressKanban::before, .progressTeamPlayer::before, .progressLearning::before, .progressTimeM::before {
     content: '';
     position: absolute;
     height: 100%;
@@ -298,16 +302,16 @@ ul {
     width: 70%;
 }
 .progressHTMLCSS::before {
-    width: 60%;
+    width: 65%;
 }
 .progressJS::before {
-    width: 35%;
+    width: 40%;
 }
 .progressPostman::before {
     width: 25%;
 }
 .progressMySQL::before {
-    width: 40%;
+    width: 50%;
 }
 .progressMSOffice::before {
     width: 70%;
@@ -315,23 +319,23 @@ ul {
 .progressJira::before {
     width: 30%;
 }
-.progressPhotoshop::before {
-    width: 45%;
+.progressSelenium::before {
+    width: 20%;
 }
 .progressAgile::before {
     width: 100%;
 }
 .progressScrum::before {
-    width: 45%;
+    width: 65%;
 }
 .progressKanban::before {
-    width: 50%;
-}
-.progressTeamPlayer::before {
     width: 70%;
 }
+.progressTeamPlayer::before {
+    width: 75%;
+}
 .progressLearning::before {
-    width: 80%;
+    width: 85%;
 }
 .progressTimeM::before {
     width: 90%;
