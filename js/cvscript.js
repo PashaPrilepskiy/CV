@@ -130,9 +130,7 @@ function annotationCallBack() {
 }
 // Call the samples window
 function samplesWindowCall() {
-    if (innerWidth > 1600) var w = window.innerWidth / 1.6
-    else if (innerWidth > 1000) var w = window.innerWidth / 1.3
-    else var w = window.innerWidth / 1
+    var w = window.innerWidth / 1.3;
     var h = window.innerHeight / 1.4;
 
     samplesWindow = window.open("samples.html", "_blank", "width=200, height=150");
@@ -140,18 +138,5 @@ function samplesWindowCall() {
     samplesWindow.resizeTo(w,h);
     samplesWindow.focus();
 }
-// Call the auto-test code window
-function TestCodeWindowCall() {
-    if (innerWidth > 1600) var w = window.innerWidth / 2.2
-    else if (innerWidth > 1000) var w = window.innerWidth / 1.2
-    else var w = window.innerWidth / 1
-    var h = window.innerHeight / 1.4;
-
-    samplesWindow = window.open("autotest.html", "_blank", "width=200, height=150");
-    samplesWindow.moveTo(30, 70);
-    samplesWindow.resizeTo(w,h);
-    samplesWindow.focus();
-}
-
 
 
