@@ -86,7 +86,7 @@
             /* testing language change: UA => EN*/
             await driver.findElement(By.id('lEn')).click();
             await pause(1800);
-            /* testing: main photo size is encreasing by onnouseon 
+            /* testing: main photo size is encreasing by onmouseon 
             and decreasing back by onmouseout*/
             let away = driver.findElement(By.css('.icon'));
             let ph1 = driver.findElement(By.id('ph1'));
@@ -98,7 +98,7 @@
             actions.move({origin:away}).press().perform();
             actions.move({origin:away}).release().perform();
             await pause(3000);
-            /* testing: main fhoto can bi changed by click*/
+            /* testing: main photo can be changed by click*/
             await driver.findElement(By.id('ph1')).click();
             await pause(1800);
             await driver.findElement(By.id('ph2')).click();
@@ -126,7 +126,7 @@
             await driver.close();
             await driver.switchTo().window(originalWindow);
             await pause(2100);
-            /* ends the test and closes broeser*/
+            /* ends the test and closes browser*/
             await driver.quit();
         };
         /* allows to use simple timeouts between tests*/
